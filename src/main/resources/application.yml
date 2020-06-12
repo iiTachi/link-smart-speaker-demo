@@ -1,0 +1,23 @@
+## OAuth2 配置
+oauth2:
+  # TODO DuerOS 授权配置
+  clients[0]:
+    client-id: DuerOSClientId
+    client-secret: DuerOSClientSecret
+    redirect-uri: https://xiaodu.baidu.com/saiya/auth/17ac993af1a668c
+    scope: all
+
+# 服务配置
+server:
+  port: 10030
+  # TODO SSL证书配置
+  ssl:
+    key-store: classpath:https.jks    # 配置SSL证书地址
+    key-store-password: keyPassword     # jks证书密钥
+    key-store-type: JKS             # 类型
+    key-alias: keyAlias           # 证书alias
+
+# 日志级别
+logging:
+  level:
+    root: info
