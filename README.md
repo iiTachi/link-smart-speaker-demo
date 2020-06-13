@@ -12,7 +12,7 @@
 > 注意：  
 > 项目使用了Lombok，建议在IDE中安装Lombok插件。
 
-1. 修改application.yml配置文件中，OAuth2的Client信息。
+**1. 修改application.yml配置文件中，OAuth2的Client信息。** 
 
 ```yaml
 ## OAuth2 配置
@@ -25,7 +25,13 @@ oauth2:
     scope: all
 ```
 
-2. 替换https.jks证书。
+DuerOS上填写方法如图：
+
+![在这里插入图片描述](https://images.gitee.com/uploads/images/2020/0614/074147_35a1824c_753460.png)
+
+**2. 替换https.jks证书。** 
+
+由于小度要求，必须使用https证书。
 
 > 如果是非jks格式的证书，可以使用OpenSSL工具合成，也可在线合成JKS。
 > 
@@ -34,7 +40,7 @@ oauth2:
 > https://csr.chinassl.net/convert-ssl.html
 
 
-3. 修改application.yml配置文件中，https证书信息。
+**3. 修改application.yml配置文件中，https证书信息** 
 
 ```
 # 服务配置
@@ -48,8 +54,9 @@ server:
     key-alias: keyAlias           # 证书alias
 ```
 
-4. 其他
+**4. 其他** 
 
-- 端口号在代码中，Application类中，https跳转http的时候也写了，如果需要修改也一并修改。
+- 部署配置完成后，点击小度配置中的授权，使用`admin`&`admin`登录进行授权。
+- 端口号在代码中（Application类）https跳转http的时候也写了，如果需要修改也一并修改。
 - 代码中，方便DEMO，写了简单的OAuth功能，不需要可以删除。
 
