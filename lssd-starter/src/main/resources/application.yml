@@ -1,0 +1,39 @@
+# 服务配置
+server:
+  port: 10030
+  # TODO SSL证书配置
+  ssl:
+    key-store: classpath:https.jks    # 配置SSL证书地址
+    key-store-password: keyPassword   # jks证书密钥
+    key-store-type: JKS               # 类型
+    key-alias: keyAlias               # 证书alias
+
+# 日志级别
+logging:
+  level:
+    root: info
+
+#AI模块配置
+ai:
+  dueros:
+    notify-bot-id: xxxxxxxxx-xxxxxx-xxxxxxx-xxxx-xxxxxx
+    # 智能家居协议，技能ID
+    # 用于有设备列表更新时，通知小度
+
+## OAuth2 配置
+oauth2:
+  # TODO DuerOS 授权配置
+  clients[0]:
+    client-id: DuerOSClientId
+    client-secret: DuerOSClientSecret
+    redirect-uri: https://xiaodu.baidu.com/saiya/auth/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  # TODO Aligenie 授权配置
+  clients[1]:
+    client-id: AliGenieClientId
+    client-secret: AliGenieClientSecret
+    redirect-uri: https://open.bot.tmall.com/oauth/callback
+
+# 授权地址： https://xxx.xxx.xxx:10030/oauth/authorize
+# Token地址： https://xxx.xxx.xxx:10030/oauth/token
+# 小度网关地址： https://xxx.xxx.xxx:10030/dueros
+# 天猫精灵网关地址： https://xxx.xxx.xxx:10030/aligenie

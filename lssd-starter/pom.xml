@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>link-smart-speaker-demo</artifactId>
+        <groupId>com.mylitboy</groupId>
+        <version>0.0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <groupId>com.mylitboy</groupId>
+    <version>0.0.1</version>
+    <name>lssd-starter</name>
+    <description>link smart speaker demo</description>
+    <artifactId>lssd-starter</artifactId>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.mylitboy</groupId>
+            <artifactId>lssd-common</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mylitboy</groupId>
+            <artifactId>lssd-oauth</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <!--                            AI模块                                   -->
+        <dependency>
+            <groupId>com.mylitboy</groupId>
+            <artifactId>lssd-ai-dueros</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mylitboy</groupId>
+            <artifactId>lssd-ai-aligenie</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <!--                            AI模块                                   -->
+        <!--                           Device模块                                -->
+        <dependency>
+            <groupId>com.mylitboy</groupId>
+            <artifactId>lssd-device-mock</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <!--                           Device模块                                -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
