@@ -2,10 +2,21 @@
 
 ## 介绍
 
-小度音箱DuerOS、天猫精灵AliGenie 智能家居 技能对接demo，模拟OAuth2、设备云功能。
+该项目是基于`SpringBoot`实现的，小度音箱DuerOS、天猫精灵AliGenie 智能家居 技能对接demo，模拟OAuth2、设备云功能。
 
 > 注意：  
 > 该项目，只是对接了DuerOS及AliGenie的智能家居技能。
+
+## 项目模块说明
+
+| 模块名 | 模块描述 |
+| ---- | ---- |
+|lssd-ai-aligenie|AI天猫精灵模块|
+|lssd-ai-dueros|AI小度音箱模块|
+|lssd-common|公共模块|
+|lssd-device-mock|设备Mock数据模块|
+|lssd-oauth|认证模块|
+|lssd-starter|启动模块项目启动入口|
 
 ## 使用说明
 
@@ -56,7 +67,7 @@ oauth2:
 由于DuerOS及AliGenie平台要求，必须使用https证书。
 
 > 如果是非jks格式的证书，可以使用OpenSSL工具合成，也可在线合成JKS。
-> 
+>
 > 在线合成参考地址：  
 > https://www.myssl.cn/tools/merge-jks-cert.html  
 > https://csr.chinassl.net/convert-ssl.html
@@ -88,7 +99,27 @@ ai:
     # 用于有设备列表更新时，通知小度
 ```
 
-### 5. 其他 
+### 5. 项目运行
+
+> 这是一个SpringBoot项目，可以参照网上的打包部署方法。
+
+#### IDE中运行
+
+运行`lssd-starter`模块的`link.smart.speaker.demo.LinkSmartSpeakerDemoApplication`类启动项目。
+
+#### Maven打包运行
+
+```bash
+# Maven打包
+cd ./link-smart-speaker-demo
+mvn install
+
+# 打包完，jar包在`/lssd-starter/target/`目录中。
+cd ./lssd-starter/target/
+java -jar lssd-starter-0.0.1.jar
+```
+
+### 6. 其他 
 
 - 部署配置完成后，点击小度配置中的授权，使用`admin`&`admin`登录进行授权。
 - 端口号在代码中（Application类）https跳转http的时候也写了，如果需要修改也一并修改。
